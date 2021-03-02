@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../../services/products.service';
 import {Products} from '../../models/products.model';
 import {Observable, of} from 'rxjs';
-import {AppDataSate, DataStateEnm} from '../../states/products.state';
+import {AppDataSate, DataStateEnm, TypesOfs, TypesOfOperation} from '../../states/products.state';
 import {catchError, map, startWith} from 'rxjs/operators';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-products',
@@ -80,5 +81,18 @@ export class ProductsComponent implements OnInit {
   Onget(p: Products) {
 
     this.route.navigateByUrl("/EditProduct/"+p.id)
+  }
+
+  Onsearch($event:TypesOfs ) {
+    switch ($event.type) {
+      case TypesOfOperation.GET_ALL_PRODUCTS:this.OnGetAllProdcuts();break;
+      case TypesOfOperation.GET_AVAILABLE_PRODUCTS:this.OnAvailableProducts();break;
+      case TypesOfOperation.GET_SELECTED_PRODUCTS:this.OnSelectedProducts();break;
+      case TypesOfOperation.GET_New_PRODUCTS:this.AddNewProduct();break;
+      case TypesOfOperation.SEARCH_PRODUCTS:this.OnsearchProducts($event.payload);break
+      case TypesOfOperation.DELETE_PRODUCTS:this.OnDelete($event.payload);break
+      case TypesOfOperation.EDIT_PRODUCTS:this.Onget($event.payload);break
+      case TypesOfOperation.SELECT_PRODUCTS:this.OnSelect($event.payload);break
+    }
   }
 }

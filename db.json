@@ -23,22 +23,6 @@
       "quantity": 33,
       "selected": false,
       "available": true
-    },
-    {
-      "id": 4,
-      "name": "Smartphones",
-      "price": 777,
-      "quantity": 33,
-      "selected": false,
-      "available": true
-    },
-    {
-      "name": "ss",
-      "price": 0,
-      "quantity": 0,
-      "selected": true,
-      "available": true,
-      "id": 5
     }
   ]
 }
