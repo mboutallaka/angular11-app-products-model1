@@ -6,7 +6,9 @@ export enum TypesOfOperation {
   SEARCH_PRODUCTS="[products] get search",
   DELETE_PRODUCTS="[products] delete",
   EDIT_PRODUCTS="[products] edit",
-  SELECT_PRODUCTS="[products] select"
+  SELECT_PRODUCTS="[products] select",
+  PRODUCT_ADDED="[products] add",
+  PRODUCT_UPDATED="[products] update",
 
 }
 export interface TypesOfs {

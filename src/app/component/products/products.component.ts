@@ -5,6 +5,7 @@ import {Observable, of} from 'rxjs';
 import {AppDataSate, DataStateEnm, TypesOfs, TypesOfOperation} from '../../states/products.state';
 import {catchError, map, startWith} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import {EventDriverService} from '../../states/event.driver.service';
 
 
 @Component({
@@ -16,10 +17,14 @@ export class ProductsComponent implements OnInit {
   product$: Observable<AppDataSate<Products[]>>;
   public readonly DataStateEnm = DataStateEnm;
 
-  constructor(private productser: ProductsService, private route: Router) {
+  constructor(private productser: ProductsService, private route: Router
+  ,private eventDriverService:EventDriverService) {
   }
 
   ngOnInit() {
+    this.eventDriverService.SourceEventSubjectObservable.subscribe((typesOfs:TypesOfs)=>{
+    this.Onsearch(typesOfs)
+    });
   }
 
   OnGetAllProdcuts() {

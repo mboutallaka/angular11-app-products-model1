@@ -13,7 +13,7 @@
         <tr>
           <th>ID</th><th>Name</th><th>Price</th><th>Quantity</th><th>Selected</th><th>Available</th>
         </tr>
-        <app-products-list-items *ngFor="let p of result.data" [product]="p" (productsEventEmitter)="OnSearch($event)"
+        <app-products-list-items *ngFor="let p of result.data" [product]="p"
         style="display: contents"></app-products-list-items>
       </table>
     </ng-container>

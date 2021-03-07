@@ -18,21 +18,21 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit() {
   }
+  /*
+    OnSelect(p: Products) {
+    this.productEventEmitterdeux.emit({type:TypesOfOperation.SELECT_PRODUCTS,payload:p})
+    }
 
-  OnSelect(p: Products) {
-  this.productEventEmitterdeux.emit({type:TypesOfOperation.SELECT_PRODUCTS,payload:p})
-  }
+    OnDelete(p: Products) {
+      this.productEventEmitterdeux.emit({type:TypesOfOperation.DELETE_PRODUCTS,payload:p})
+    }
 
-  OnDelete(p: Products) {
-    this.productEventEmitterdeux.emit({type:TypesOfOperation.DELETE_PRODUCTS,payload:p})
-  }
-
-  Onget(p: Products) {
-    this.productEventEmitterdeux.emit({type:TypesOfOperation.EDIT_PRODUCTS,payload:p})
-  }
+    Onget(p: Products) {
+      this.productEventEmitterdeux.emit({type:TypesOfOperation.EDIT_PRODUCTS,payload:p})
+    }
 
 
-  OnSearch($event: TypesOfs) {
-    this.productEventEmitterdeux.emit($event)
-  }
+    OnSearch($event: TypesOfs) {
+      this.productEventEmitterdeux.emit($event)
+    }*/
 }
